@@ -16,6 +16,15 @@ return [
 
     'response_class' => \IICN\Notification\Services\Response\Responser::class,
 
+    'default_send_to_test_topic' => !app()->isProduction(),
+
+    'topic_names' => [
+        "test" => \IICN\Notification\Constants\Topics::TEST,
+
+        "android" => \IICN\Notification\Constants\Topics::ANDROID_PLATFORM,
+
+        "ios" => \IICN\Notification\Constants\Topics::IOS_PLATFORM,
+    ],
 
     'additional_resource_class' => \IICN\Notification\Http\Resources\CollectionAdditionalTrait::class,
 
